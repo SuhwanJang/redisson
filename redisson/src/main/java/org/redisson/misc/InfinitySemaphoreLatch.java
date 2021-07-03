@@ -42,8 +42,8 @@ public class InfinitySemaphoreLatch extends AbstractQueuedSynchronizer {
 
     @Override
     public final int tryAcquireShared(int ignored) {
-        // return 1 if we allow the requestor to proceed, -1 if we want the
-        // requestor to block.
+        // return 1 if we allow the requester to proceed, -1 if we want the
+        // requester to block.
         return getState() == OPEN_STATE ? 1 : -1;
     }
 
